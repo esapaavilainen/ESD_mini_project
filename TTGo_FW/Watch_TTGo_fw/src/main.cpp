@@ -1,6 +1,5 @@
 #include "config.h"
 #include "utils.h"
-//#include <FS.h>
 
 
 
@@ -35,7 +34,19 @@ void initHikeWatch()
     }
 
     // Stepcounter
+    sensor->resetStepCounter();
+
     // Configure IMU
+    sensor->enableAccel();
+    sensor->enableActivityInterrupt();
+    sensor->enableAnyNoMotionInterrupt();
+    //sensor->enableFeature(); // <-- needs more inputs
+    sensor->enableIrq();
+    sensor->enableStepCountInterrupt();
+    sensor->enableTiltInterrupt();
+    sensor->enableWakeupInterrupt();
+
+
     // Enable BMA423 step count feature
     // Reset steps
     // Turn on step interrupt
