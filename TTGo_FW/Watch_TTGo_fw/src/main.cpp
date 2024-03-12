@@ -25,6 +25,17 @@ volatile bool irqButton = false;
 bool sessionStored = false;
 bool sessionSent = false;
 
+    /*sensor->enableAccel();
+    sensor->enableActivityInterrupt();
+    sensor->enableAnyNoMotionInterrupt();
+    //sensor->enableFeature(); // <-- needs more inputs
+    sensor->enableIrq();
+    sensor->enableStepCountInterrupt();
+    sensor->enableTiltInterrupt();
+    sensor->enableWakeupInterrupt();
+    sensor->resetStepCounter();
+*/
+
 void initHikeWatch()
 {
     // LittleFS
@@ -34,19 +45,7 @@ void initHikeWatch()
     }
 
     // Stepcounter
-    sensor->resetStepCounter();
-
     // Configure IMU
-    sensor->enableAccel();
-    sensor->enableActivityInterrupt();
-    sensor->enableAnyNoMotionInterrupt();
-    //sensor->enableFeature(); // <-- needs more inputs
-    sensor->enableIrq();
-    sensor->enableStepCountInterrupt();
-    sensor->enableTiltInterrupt();
-    sensor->enableWakeupInterrupt();
-
-
     // Enable BMA423 step count feature
     // Reset steps
     // Turn on step interrupt
